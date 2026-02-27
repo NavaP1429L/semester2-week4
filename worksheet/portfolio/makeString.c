@@ -1,7 +1,7 @@
 
 /*
-Name:
-Student ID:
+Name:Navaneet Pillai    
+Student ID:201939018
 */
 
 #include <stdio.h>
@@ -9,11 +9,21 @@ Student ID:
 
 int main( int argc, char **argv ) {
 
-    // define appropriate data to hold your answer
+    // max: 10 args × 4 chars + 9 '-' + '\0'
+    char buffer[50] = "";
 
-    // process the command-line data using appropriate string functions
+    // skip argv[0]
+    for (int i = 1; i < argc; i++) {
 
-    printf("%s\n",buffer); // use only this single print statement in your submitted code
+        strcat(buffer, argv[i]);
+
+        // add '-' if not last
+        if (i < argc - 1) {
+            strcat(buffer, "-");
+        }
+    }
+
+    printf("%s\n", buffer);
 
     return 0;
 }
